@@ -70,21 +70,24 @@ export default function ModernBentoGrid() {
                   className={`energy-tab ${energyTime === 'morning' ? 'active' : ''}`}
                   onClick={() => setEnergyTime('morning')}
                 >
-                  🌅 Morning (Peak)
+                  <span className="et-full">🌅 Morning (Peak)</span>
+                  <span className="et-compact">🌅 Morning</span>
                 </button>
                 <button
                   type="button"
                   className={`energy-tab ${energyTime === 'afternoon' ? 'active' : ''}`}
                   onClick={() => setEnergyTime('afternoon')}
                 >
-                  ☀️ Afternoon (Mid)
+                  <span className="et-full">☀️ Afternoon (Mid)</span>
+                  <span className="et-compact">☀️ Mid-Day</span>
                 </button>
                 <button
                   type="button"
                   className={`energy-tab ${energyTime === 'evening' ? 'active' : ''}`}
                   onClick={() => setEnergyTime('evening')}
                 >
-                  🌙 Evening (Low)
+                  <span className="et-full">🌙 Evening (Low)</span>
+                  <span className="et-compact">🌙 Evening</span>
                 </button>
               </div>
 
