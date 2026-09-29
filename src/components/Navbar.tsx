@@ -16,10 +16,27 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [menuOpen]);
+
   const closeMenu = () => setMenuOpen(false);
 
   return (
-    <nav className={`navbar ${scrolled ? 'scrolled' : ''}`} id="navbar">
+    <>
+      <div
+        className={`nav-backdrop ${menuOpen ? 'active' : ''}`}
+        onClick={closeMenu}
+        aria-hidden="true"
+      />
+      <nav className={`navbar ${scrolled ? 'scrolled' : ''}`} id="navbar">
       <div className="nav-container">
         <Link href="/" className="nav-logo" onClick={closeMenu}>
           <img src="/logo.png" alt="DailyPlanner Logo" className="logo-img" width="36" height="36" />
@@ -69,5 +86,6 @@ export default function Navbar() {
         </button>
       </div>
     </nav>
+    </>
   );
 }

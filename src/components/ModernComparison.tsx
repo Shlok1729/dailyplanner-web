@@ -58,6 +58,11 @@ export default function ModernComparison() {
           </p>
         </div>
 
+        <div className="table-scroll-hint">
+          <i className="fa-solid fa-arrows-left-right"></i>
+          <span>Swipe horizontally to compare all features</span>
+        </div>
+
         <div className="modern-comparison-table-wrap">
           <table className="modern-table">
             <thead>

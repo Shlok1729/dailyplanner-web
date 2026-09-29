@@ -6530,4 +6530,660 @@ img.member-img {
     box-shadow: 0 0 14px rgba(139, 92, 246, 0.35);
 }
 
+/* ==========================================================================
+   PHONE & TABLET ULTRA-RESPONSIVE SYSTEM (Mobile-First Polish)
+   ========================================================================== */
+
+/* Universal Overflow Protection */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden !important;
+    position: relative;
+}
+
+/* Mobile Nav Backdrop & Animated Hamburger to X */
+.nav-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(5, 3, 12, 0.75);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 998;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.nav-backdrop.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.nav-toggle span {
+    transform-origin: center;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s ease;
+}
+
+.nav-toggle.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.nav-toggle.active span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+
+.nav-toggle.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Table Horizontal Swipe Hint (Mobile only) */
+.table-scroll-hint {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #a5b4fc;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    animation: pulseHint 2.4s ease-in-out infinite;
+}
+
+@keyframes pulseHint {
+    0%, 100% { opacity: 0.7; transform: translateX(0); }
+    50% { opacity: 1; transform: translateX(3px); }
+}
+
+/* --------------------------------------------------------------------------
+   TABLET & MOBILE SCREENS (<= 991px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 991px) {
+    .hero-split-section {
+        padding: 100px 16px 50px;
+    }
+
+    .hero-split-container {
+        grid-template-columns: 1fr;
+        gap: 36px;
+        text-align: center;
+    }
+
+    .hero-split-left {
+        align-items: center;
+        text-align: center;
+        width: 100%;
+    }
+
+    .hero-split-title {
+        font-size: clamp(2.1rem, 6vw, 3.2rem);
+        margin-bottom: 18px;
+    }
+
+    .hero-split-desc {
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 28px;
+    }
+
+    .hero-split-actions {
+        justify-content: center;
+    }
+
+    .hero-trust-bar {
+        justify-content: center;
+    }
+
+    .hero-split-right {
+        width: 100%;
+        max-width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .tilted-phone-stage {
+        perspective: none !important;
+        width: 100%;
+        padding: 0;
+    }
+
+    .tilted-phone-wrapper {
+        transform: none !important;
+        filter: drop-shadow(0 18px 36px rgba(0, 0, 0, 0.6)) drop-shadow(0 6px 16px rgba(124, 58, 237, 0.25)) !important;
+    }
+
+    .tilted-phone-wrapper:hover {
+        transform: none !important;
+    }
+
+    .floating-badge {
+        display: none !important;
+    }
+
+    .modern-bento-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .bento-span-2 {
+        grid-column: span 1;
+    }
+
+    .routines-showcase-row {
+        grid-template-columns: 1fr;
+    }
+
+    .creators-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   STANDARD PHONES (<= 768px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+    /* Container standard padding */
+    .container {
+        padding: 0 14px;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* Section Headings */
+    .section-head-center {
+        margin-bottom: 36px;
+        padding: 0 6px;
+    }
+
+    .section-title-large {
+        font-size: clamp(1.85rem, 6.5vw, 2.4rem);
+        line-height: 1.18;
+        margin-bottom: 12px;
+    }
+
+    .section-subtitle {
+        font-size: 0.95rem;
+        line-height: 1.55;
+    }
+
+    /* Pill styling on mobile */
+    .section-pill {
+        font-size: 0.74rem;
+        padding: 5px 12px;
+        margin-bottom: 18px;
+        line-height: 1.35;
+        white-space: normal;
+        text-align: center;
+        max-width: 100%;
+    }
+
+    /* Hero adjustments */
+    .hero-split-section {
+        padding: 92px 14px 44px;
+    }
+
+    .hero-split-glow {
+        width: 280px;
+        height: 280px;
+        top: 2%;
+        right: -40px;
+        filter: blur(65px);
+    }
+
+    .hero-split-title {
+        font-size: clamp(1.95rem, 7.5vw, 2.5rem);
+        line-height: 1.15;
+    }
+
+    .hero-split-desc {
+        font-size: 0.96rem;
+        line-height: 1.6;
+        padding: 0 4px;
+    }
+
+    .hero-trust-bar {
+        border-radius: 18px;
+        padding: 12px 16px;
+        gap: 8px;
+        flex-direction: column;
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto;
+    }
+
+    .trust-divider {
+        display: none !important;
+    }
+
+    .trust-pill {
+        font-size: 0.8rem;
+        justify-content: center;
+        width: 100%;
+    }
+
+    /* Ticker */
+    .capabilities-ticker-section {
+        padding: 14px 0;
+    }
+
+    .ticker-group {
+        font-size: 0.84rem;
+        gap: 14px;
+        padding-right: 14px;
+    }
+
+    /* Bento Cards */
+    .modern-bento-section {
+        padding: 54px 14px;
+    }
+
+    .bento-box {
+        padding: 22px 18px;
+        border-radius: 20px;
+    }
+
+    .bento-box h3 {
+        font-size: 1.25rem;
+    }
+
+    .bento-box p {
+        font-size: 0.9rem;
+        margin-bottom: 20px;
+    }
+
+    .energy-tabs {
+        display: flex;
+        gap: 6px;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 6px;
+        width: 100%;
+    }
+
+    .energy-tab {
+        padding: 6px 12px;
+        font-size: 0.78rem;
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+
+    .energy-card-preview {
+        padding: 14px;
+        border-radius: 14px;
+    }
+
+    .ec-title {
+        font-size: 0.95rem;
+    }
+
+    .shield-widget {
+        padding: 14px;
+        border-radius: 14px;
+    }
+
+    .mini-matrix-grid {
+        gap: 6px;
+    }
+
+    .matrix-box {
+        padding: 10px;
+    }
+
+    /* ROI Calculator */
+    .calculator-section {
+        padding: 50px 14px;
+    }
+
+    .roi-calculator-card {
+        padding: 22px 16px;
+        border-radius: 22px;
+    }
+
+    .roi-calc-header {
+        margin-bottom: 26px;
+    }
+
+    .roi-calc-header h3 {
+        font-size: 1.65rem;
+    }
+
+    .roi-calc-header p {
+        font-size: 0.9rem;
+    }
+
+    .roi-calc-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .result-metric-card {
+        padding: 18px 16px;
+        border-radius: 16px;
+    }
+
+    .result-metric-number {
+        font-size: 2.2rem;
+    }
+
+    /* Comparison Section & Swipeable Table */
+    .modern-comparison-section {
+        padding: 50px 14px;
+    }
+
+    .table-scroll-hint {
+        display: flex;
+    }
+
+    .modern-comparison-table-wrap {
+        border-radius: 18px;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch;
+        width: 100%;
+        box-shadow: 0 14px 40px rgba(0, 0, 0, 0.6);
+    }
+
+    .modern-table {
+        min-width: 530px;
+        width: 100%;
+    }
+
+    .modern-table th,
+    .modern-table td {
+        padding: 12px 14px;
+        font-size: 0.82rem;
+    }
+
+    .app-badge-col {
+        gap: 8px;
+    }
+
+    .table-app-icon {
+        width: 26px;
+        height: 26px;
+    }
+
+    /* Creators Cards */
+    .creators-section {
+        padding: 50px 14px;
+    }
+
+    .creator-card {
+        padding: 24px 18px;
+        border-radius: 20px;
+    }
+
+    .creator-quote {
+        font-size: 0.94rem;
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+
+    /* Reviews Section */
+    .reviews-section {
+        padding: 50px 0;
+    }
+
+    .reviews-header {
+        margin-bottom: 26px;
+        padding: 0 16px;
+    }
+
+    .review-card {
+        width: 290px;
+        min-width: 290px;
+        padding: 20px 18px;
+        border-radius: 18px;
+    }
+
+    .review-text {
+        font-size: 0.88rem;
+        line-height: 1.55;
+    }
+
+    /* FAQ Section */
+    .faq-section {
+        padding: 50px 14px;
+    }
+
+    .faq-item {
+        border-radius: 14px;
+    }
+
+    .faq-question {
+        padding: 16px 14px;
+        font-size: 0.96rem;
+    }
+
+    .faq-answer {
+        padding: 0 14px;
+    }
+
+    .faq-item.active .faq-answer {
+        padding: 0 14px 16px;
+    }
+
+    /* Final CTA */
+    .final-glow-cta {
+        padding: 44px 14px 20px;
+    }
+
+    .final-cta-card {
+        padding: 34px 16px;
+        border-radius: 22px;
+    }
+
+    .final-cta-card h2 {
+        font-size: clamp(1.85rem, 6.6vw, 2.35rem);
+    }
+
+    .final-cta-card p {
+        font-size: 0.94rem;
+        margin-bottom: 22px;
+    }
+
+    .final-cta-buttons {
+        flex-direction: column;
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto;
+        gap: 12px;
+    }
+
+    /* Newsletter Card */
+    .newsletter-minimal-section {
+        padding: 20px 14px 50px;
+    }
+
+    .newsletter-minimal-card {
+        padding: 22px 16px;
+        border-radius: 18px;
+        flex-direction: column;
+        text-align: center;
+        gap: 16px;
+    }
+
+    .newsletter-minimal-form {
+        flex-direction: column;
+        width: 100%;
+        max-width: 100%;
+        gap: 10px;
+    }
+
+    .newsletter-minimal-form input {
+        width: 100%;
+        padding: 13px 16px;
+        font-size: 0.92rem;
+    }
+
+    .newsletter-minimal-form .btn-primary-gradient {
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* Footer Mobile */
+    .footer {
+        padding: 44px 14px 24px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 26px;
+        text-align: center;
+    }
+
+    .footer-logo {
+        justify-content: center;
+    }
+
+    .footer-brand p {
+        margin: 0 auto 8px;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+
+    .footer-huge-text {
+        font-size: clamp(2rem, 9.5vw, 72px);
+        padding: 30px 0 16px;
+        line-height: 1.1;
+    }
+
+    /* Subpages (How-to-use, Blog, Legal) */
+    .page-header {
+        padding: 100px 16px 36px !important;
+    }
+
+    .page-header h1 {
+        font-size: clamp(1.9rem, 7vw, 2.4rem) !important;
+    }
+
+    .page-content {
+        padding: 20px 14px 60px !important;
+    }
+
+    .hiw-hero {
+        padding: 100px 16px 36px;
+    }
+
+    .hiw-hero h1 {
+        font-size: clamp(1.9rem, 7vw, 2.4rem);
+    }
+
+    .hiw-steps {
+        padding: 30px 14px 50px;
+    }
+
+    .hiw-number {
+        width: 50px;
+        height: 50px;
+        font-size: 1.15rem;
+    }
+
+    .hiw-content h2 {
+        font-size: 1.25rem;
+    }
+
+    .blog-featured {
+        min-height: 280px;
+        margin-bottom: 24px;
+        border-radius: 18px;
+    }
+
+    .blog-featured-content {
+        padding: 20px 16px;
+    }
+
+    .blog-featured-title {
+        font-size: 1.45rem;
+        line-height: 1.25;
+    }
+
+    .legal-container {
+        padding: 0 14px 60px;
+    }
+
+    .legal-content {
+        padding: 22px 16px !important;
+        border-radius: 18px;
+    }
+
+    .legal-content h2 {
+        font-size: 1.35rem;
+        margin: 32px 0 14px;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   SMALL PHONES (<= 480px, e.g. iPhone SE, iPhone 14/15/16, Androids)
+   -------------------------------------------------------------------------- */
+@media (max-width: 480px) {
+    /* Hero action buttons stack full width */
+    .hero-split-actions {
+        flex-direction: column;
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto 24px;
+        gap: 12px;
+    }
+
+    .btn-primary-gradient,
+    .btn-secondary-glass {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+        padding: 14px 20px;
+        font-size: 0.95rem;
+        border-radius: 14px;
+        min-height: 48px;
+    }
+
+    /* Phone Mockup fits screen with breathing margin */
+    .tilted-phone-wrapper .phone-mockup {
+        width: 285px;
+        max-width: calc(100vw - 32px);
+        height: 580px;
+        margin: 0 auto;
+    }
+
+    /* Distraction pills in ROI calculator stack vertically on narrow screens */
+    .distraction-pills {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .distraction-pill {
+        padding: 10px 12px;
+        text-align: left;
+    }
+
+    .distraction-pill span {
+        font-size: 0.84rem;
+    }
+
+    .result-metric-row {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .result-metric-row .result-metric-number {
+        font-size: 1.85rem;
+    }
+
+    /* Final CTA buttons */
+    .final-cta-buttons .btn-primary-gradient,
+    .final-cta-buttons .btn-secondary-glass {
+        width: 100%;
+        justify-content: center;
+        min-height: 48px;
+    }
+}
+
+
 
