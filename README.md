@@ -32,36 +32,55 @@ I kept the stack intentionally simple to ensure maximum performance and easy mai
 
 ```text
 dailyplanner-web/
-│── index.html          # The main landing page and interactive demo
-│── styles.css          # All custom styling and responsive mobile-first rules
-│── script.js           # Intersection observers, interactive logic, and AI simulation
-│── logo.png            # Brand assets
-│── developer.jpeg      # Team assets
-│── founder.jpeg        # Team assets
+├── public/                 # Static brand assets, images, and manifest
+│   ├── logo.png
+│   ├── hero-bg.png
+│   ├── trending-routines.jpg
+│   ├── developer.jpeg
+│   ├── founder.jpeg
+│   └── manifest.json
+├── src/
+│   ├── app/
+│   │   ├── layout.tsx      # Root layout, fonts, and meta tags
+│   │   ├── page.tsx        # Main interactive landing page
+│   │   ├── globals.css     # Design system, glassmorphism & phone mockup CSS
+│   │   ├── about/          # /about route
+│   │   ├── how-to-use/     # /how-to-use route
+│   │   ├── blog/           # /blog and /blog/[slug] routes
+│   │   ├── privacy/        # /privacy route
+│   │   └── terms/          # /terms route
+│   └── components/
+│       ├── InteractiveDemo.tsx  # Simulated mobile app (Pomodoro, AI chat, tasks)
+│       ├── Navbar.tsx           # Responsive navigation bar
+│       ├── Footer.tsx           # Footer with links & branding
+│       ├── CustomCursor.tsx     # Smooth lag follower cursor
+│       ├── BackgroundScene.tsx  # Ambient gradient morphing
+│       ├── SmoothScroll.tsx     # Lenis smooth scrolling provider
+│       ├── FaqSection.tsx       # Interactive FAQ accordion
+│       └── ReviewsMarquee.tsx   # Continuous review marquee
+├── package.json
+├── tsconfig.json
+└── next.config.mjs
 ```
 
 ---
 
 ## 🏃‍♂️ Want to run it locally?
 
-It's super straightforward. Since it's pure HTML/JS/CSS, you don't even need Node or `npm install`.
+1. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+2. **Start the development server:**
+   ```bash
+   npm run dev
+   ```
+3. **Open the app:** Open your browser and navigate to `http://localhost:3000`.
 
-1. **Clone the repo:**
-   ```bash
-   git clone https://github.com/Daivik1520/dailyplanner-web.git
-   ```
-2. **Navigate into the folder:**
-   ```bash
-   cd dailyplanner-web
-   ```
-3. **Spin up a local server:** 
-   (If you have Python installed, this is the easiest way)
-   ```bash
-   python3 -m http.server 8080
-   ```
-4. **View it:** Open your browser and go to `http://localhost:8080`.
-
----
+To create an optimized production build:
+```bash
+npm run build && npm start
+```
 
 ## 🤝 Let's Connect
 
