@@ -839,14 +839,17 @@ export default function InteractiveDemo() {
                       flexDirection: 'column',
                       alignItems: 'center',
                       padding: '6px 4px',
-                      borderRadius: '8px',
-                      background: i === 1 ? 'var(--accent)' : 'rgba(255,255,255,0.05)',
+                      borderRadius: '10px',
+                      background: i === 1 ? 'linear-gradient(135deg, #7c3aed, #a855f7)' : '#141128',
+                      border: i === 1 ? '1.5px solid #a855f7' : '1px solid rgba(139, 92, 246, 0.22)',
+                      boxShadow: i === 1 ? '0 0 14px rgba(124, 58, 237, 0.45)' : 'none',
                       fontSize: '0.75rem',
-                      minWidth: '32px',
+                      minWidth: '34px',
+                      color: '#ffffff',
                     }}
                   >
-                    <span>{day}</span>
-                    <span style={{ fontWeight: 700 }}>{28 + i > 31 ? (28 + i) - 31 : 28 + i}</span>
+                    <span style={{ fontSize: '0.7rem', color: i === 1 ? '#ffffff' : '#9d99be', fontWeight: 500 }}>{day}</span>
+                    <span style={{ fontWeight: 800, color: '#ffffff', marginTop: '2px' }}>{28 + i > 31 ? (28 + i) - 31 : 28 + i}</span>
                   </div>
                 ))}
               </div>
