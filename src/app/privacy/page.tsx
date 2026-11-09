@@ -93,7 +93,7 @@ export default function PrivacyPage() {
             <h2>6. Contact Us</h2>
             <p>
               If you have any questions or feedback regarding our privacy practices, please contact our team at{' '}
-              <a href="mailto:support@dailyplanner.app">support@dailyplanner.app</a>.
+              <a href="mailto:support@dailyplannerapp.com">support@dailyplannerapp.com</a>.
             </p>
           </section>
         </div>

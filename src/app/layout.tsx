@@ -9,17 +9,20 @@ export const metadata: Metadata = {
   title: 'DailyPlanner – AI-Powered Smart Daily Scheduling App',
   description:
     'DailyPlanner - AI-powered daily planning app that automatically builds personalized schedules, blocks distractions, and helps you focus on what truly matters. 100% Free.',
-  metadataBase: new URL('https://dailyplanner.app'),
+  metadataBase: new URL('https://www.dailyplannerapp.com'),
   icons: {
     icon: '/logo.png',
     apple: '/logo.png',
+  },
+  verification: {
+    google: 'google81b0da083855cb47',
   },
   openGraph: {
     type: 'website',
     title: 'DailyPlanner – AI-Powered Smart Daily Scheduling App',
     description:
       'AI-powered daily planning app that automatically builds personalized schedules, blocks distractions, and helps you focus on what truly matters. 100% Free.',
-    url: 'https://dailyplanner.app',
+    url: 'https://www.dailyplannerapp.com',
     images: [{ url: '/logo.png' }],
   },
   twitter: {
@@ -35,8 +38,6 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
-  maximumScale: 1,
-  userScalable: false,
 };
 
 export default function RootLayout({
